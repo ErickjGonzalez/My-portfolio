@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
     shortDescription: "Web system for managing census data and geographic statistics – backend part.",
     description:
       "built with Laravel, this system handles the storage, processing, and management of census data and geographic statistics, providing a solid and reliable API for the frontend to consume.",
-    image: "/images/projects/CensoBAK.jpg",
+    image: "/images/projects/CensoBAK.png",
     technologies: ["Laravel", "Postgree", "API REST"],
     githubUrl: "https://github.com/ErickjGonzalez/Censo-Backend",
     
