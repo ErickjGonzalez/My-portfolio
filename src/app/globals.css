@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colores personalizados */
+  --color-deep-black: #0a0a0b;
+  --color-purple-nebula: #8b5cf6;
+  --color-purple-dark: #4c1d95;
+  --color-purple-glow: rgba(139, 92, 246, 0.25);
+
+  /* Animaciones */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+/* Fondo base con nebulosa púrpura (igual que antes pero mejorado) */
+body {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(167, 139, 250, 0.15), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(109, 40, 217, 0.2), transparent 50%),
+    #000000;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Scrollbar púrpura */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+::-webkit-scrollbar-thumb { background: #4c1d95; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #8b5cf6; }
+
+/* NUEVO CARD */
+
+@layer utilities {
+  /* Utilidades para flip 3D */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .group-hover\:rotate-y-180:hover {
+    transform: rotateY(180deg);
+  }
+
+  /* globals.css (o tu archivo CSS principal) */
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -410; /* 10 + 400 = 410 */
+  }
+}
+
+/* ===== EFECTO RÍO / RIPPLE MEJORADO ===== */
+
+/* Hace que el gradiente de fondo se mueva hacia la derecha al hacer hover */
+.bg-left {
+  background-position: 0% 50%;
+}
+
+.bg-right {
+  background-position: 100% 50%;
+}
+
+/* Transición suave para el gradiente (se aplica en el componente) */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Si quieres un efecto de "ola" adicional en el texto (opcional) */
+@keyframes gentleWave {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-2px); }
+}
+
+.hover\:animate-wave:hover span {
+  animation: gentleWave 0.6s ease-in-out;
+}
+
+}
