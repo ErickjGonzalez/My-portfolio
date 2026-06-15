@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Erick Gonzalez | fullstack Dev",
-  description: "Portafolio profesional de Erick Gonzalez. +3 años de experiencia en desarrollo web.",
+  description: "Erick Gonzalez professional portfolio, specializing in Laravel, React, and Node.js",
 };
 
 export default function RootLayout({

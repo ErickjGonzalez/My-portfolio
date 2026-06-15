@@ -12,7 +12,7 @@ export const SITE_CONFIG = {
 
 export const NAV_ITEMS = [
   { label: "Home", href: "#home" },        
- { label: "Proyects", href: "#projects" }, 
+ { label: "Projects", href: "#projects" }, 
   { label: "Skills", href: "#skills" }, 
   { label: "Experience", href: "#experience" }, 
    { label: "About me", href: "#about" },     
